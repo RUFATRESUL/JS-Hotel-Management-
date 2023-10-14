@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <section class="filter">
+            <div class="filter-div">
+               <img src="img/R.png" alt="" width="110px">
+            </div>
+            <div class="filter-div">
+                <select name="floor" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="filter-div">
+                <select name="floor" id="">
+                    <option value="1">Standart</option>
+                    <option value="2">Deluxe</option>
+                    <option value="3">VIP</option>
+                </select>
+            </div>
+            <div class="filter-div">
+             <label for="used">Used</label><input type="checkbox" name="used" id="used">
+            </div>
+            <div class="filter-div">
+               <label for="min-price">Min.Price</label>
+               <input type="text" id="min-price">
+               <label for="max-price">Max.Price</label>
+               <input type="text" id="max-price">
+            </div>
+            <div class="filter-div">
+                <button class="new-room-button">New Room</button>
+             </div>
+        </section>
+        <section class="info-table">
+            <table class="main-table">
+                <thead>
+                    <th>No</th>
+                    <th>Number</th>
+                    <th>Floor</th>
+                    <th>Type</th>
+                    <th>Full</th>
+                    <th>End Date</th>
+                    <th>Customer</th>
+                    <th>Price(Day)</th>
+                    <th>Fill in</th>
+                    <th>Extracting</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody class="main-body">
+                    <tr>
+                        <td>1</td>
+                        <td>199</td>
+                        <td>10</td>
+                        <td>Deluxe</td>
+                        <td><i class="fa-regular fa-circle-check"></i></td>
+                        <td>20.08.2023</td>
+                        <td>Rufat Rasulov</td>
+                        <td>500</td>
+                        <td><i class="fa-regular fa-square-plus button"></i></td>
+                        <td><i class="fa-solid fa-user-minus button"></i></td>
+                        <td><i class="fa-solid fa-trash-can button"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="general-info">
+            <div class="information">
+            <h4>Total room number : <span></span></h4>
+            <h4>Empty room number : <span></span></h4>
+            <h4>Total Revenue : <span></span></h4>
+            </div>
+            <div class="adress">
+                <div>
+                    <h4>The Netherlands</h4>
+                    <h4>Piet Heinkade 11, 1019 BR Amsterdam</h4>
+                    <h4>+31 20 519 1200</h4>
+                </div>
+                
+                <img src="img/Mövenpick-Hotels.jpg" alt="" width="150px">
+            </div>
+            
+        </section>
+    </div>
+
+    <div class="backdrop"></div>
+
+    <div class="modal">
+        <div class="title">hkhjdg</div>
+        <div class="content">akjd</div>
+        <div class="buttons">  
+            <button>Save</button>
+            <button>Exit</button>
+        </div>
+        <i class="fa-solid fa-xmark exit"></i>
+    </div>
+    <div class="modal add-room-modal">
+        <div class="title">hkhjdg</div>
+        <div class="content">akjd</div>
+        <div class="buttons">  
+            <button>Save</button>
+            <button>Exit</button>
+        </div>
+        <!-- <i class="fa-solid fa-xmark exit"></i> -->
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
