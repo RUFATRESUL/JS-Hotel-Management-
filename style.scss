@@ -130,7 +130,7 @@
     position: absolute;
     width: 600px;
     left: 50%;
-    top: -100px;
+    top: -260px;
     transform: translate(-50%, -50%);
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px rgb(189, 187, 187);
@@ -144,6 +144,28 @@
     .content{
         padding: 20px 15px;
         border-bottom: 1px solid grey;
+        form{
+            div{
+
+                margin-bottom: 10px;
+                input, select{
+                    width: 100%;
+                    padding: 10px;
+                    outline:none ;
+        
+                }
+                input.error{
+                    border: 2px solid red;
+                }
+                input:focus{
+                    outline: none;
+                }
+                small{
+                    color: red;
+                }
+            }
+
+        }
     }
     .buttons{
         display: flex;

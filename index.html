@@ -66,10 +66,11 @@
                         <td>20.08.2023</td>
                         <td>Rufat Rasulov</td>
                         <td>500</td>
-                        <td><i class="fa-regular fa-square-plus button"></i></td>
-                        <td><i class="fa-solid fa-user-minus button"></i></td>
-                        <td><i class="fa-solid fa-trash-can button"></i></td>
+                        <td><i class="fa-regular fa-square-plus button1"></i></td>
+                        <td><i class="fa-solid fa-user-minus button2"></i></td>
+                        <td><i class="fa-solid fa-trash-can button3"></i></td>
                     </tr>
+                   
                 </tbody>
             </table>
         </section>
@@ -99,18 +100,45 @@
         <div class="content">akjd</div>
         <div class="buttons">  
             <button>Save</button>
-            <button>Exit</button>
+            <button class="exit-button">Exit</button>
         </div>
         <i class="fa-solid fa-xmark exit"></i>
     </div>
-    <div class="modal add-room-modal">
-        <div class="title">hkhjdg</div>
-        <div class="content">akjd</div>
-        <div class="buttons">  
-            <button>Save</button>
-            <button>Exit</button>
+    <div class="modal add-room-modal modal-open">
+        <div class="title">Add Room</div>
+        <div class="content">
+            <form  action="">
+                <div class="number-div">
+                    <label for="number">Number</label>
+                    <input type="text"id="number" name="number" placeholder="Number">
+                    <small></small>
+                </div>
+                <div class="floor-div">
+                    <label for="floor">Floor</label>
+                    <input type="text"id="floor" name="floor" placeholder="Floor">
+                    <small></small>
+                </div>
+                <div class="type-div">
+                    <label for="type">Type</label>
+                    <select id="type" name="type" >
+                        <option value="Standart">Standart</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="VIP">VIP</option>
+                    </select>
+                    <small></small>
+                </div>
+                <div class="price-div">
+                    <label for="price">Price</label>
+                    <input type="text"id="price" name="price" placeholder="Price">
+                    <small></small>
+                </div>
+            </form>
         </div>
-        <!-- <i class="fa-solid fa-xmark exit"></i> -->
+        <div class="buttons">  
+            <button class="save">Save</button>
+            <button class="exit-button">Exit</button>
+        </div>
+        <i class="fa-solid fa-xmark exit"></i>
     </div>
     <script src="app.js"></script>
 </body>
