@@ -94,6 +94,25 @@ class PositiveNumberInputController extends InputController{
         }
     }
 }
+// class FillinInputController extends InputController{
+//     constructor(element){
+//         super(element)
+//         this.element.oninput = this.changeHandler
+//         this.value = ''
+//     }
+//     changeHandler = () =>{
+//         const fillValue = this.element.value
+//         if(/^\d*$/.test(fillValue)){
+//             this.value = fillValue
+//             this.clearError()
+//         }else{
+//             this.element.value = this.value
+//             this.setError('Sadece reqem girilmelidir')
+//         }
+
+//     }
+
+// }
 
 
 class AddRoomModal extends Modal{
@@ -102,13 +121,21 @@ class AddRoomModal extends Modal{
         this.parent = parent
         this.newRoomButton = document.querySelector('.new-room-button')
         this.newRoomButton.onclick = this.openModal
+        // this.userButton = document.querySelector('.userButton')
+        // this.userButton.onclick = this.openModal
+        // this.form = document.querySelector('.modal-fill-in')
         this.form = document.querySelector('.add-room-modal form')
         this.numberInput = new PositiveNumberInputController(this.form[0])
         this.floorInput = new PositiveNumberInputController(this.form[1])
         this.typeSelect = new SelectController(this.form[2])
         this.priceInput = new PositiveNumberInputController(this.form[3])
+        // this.nameInput = new FillinInputController(this.form[0])
+        // this.dateInput = new FillinInputController(this.form[1])
+        // this.formItems1 = [this.nameInput,this.dateInput]
         this.formItems = [this.numberInput,this.floorInput,this.typeSelect,this.priceInput]
         this.saveButton = document.querySelector('.add-room-modal .save')
+        // this.saveFillin = document.querySelector('.modal-fill-in .save')
+        // this.saveFillin.onclick = this.saveHandler
         this.saveButton.onclick = this.saveHandler
     }
     
@@ -129,7 +156,9 @@ class AddRoomModal extends Modal{
                 price:this.priceInput.value,
                 floor:this.floorInput.value,
                 type:this.typeSelect.value,
-                number:this.numberInput.value
+                number:this.numberInput.value,
+                // name:this.nameInput.value,
+                // date:this.dateInput.value
             }
             this.parent.renderRooms(info)
             this.saveDataToLocalStorage(info);
@@ -158,17 +187,31 @@ class Table{
         this.addRoomModal = new AddRoomModal(this)
         this.rooms = this.loadLocalStorage();
         this.renderRooms();
-        
+        this.tbodyEl.addEventListener('click', (event) => {
+            const trashButton = event.target.closest('.delete-button');
+            if (trashButton) {
+                const key = trashButton.getAttribute('data-key');
+                if (key) {
+                    localStorage.removeItem(key);
+                   
+                    trashButton.closest('tr').remove();
+                }
+            }
+        });
+      
     }
- 
+
+
     get getRoomCount(){
         return this.rooms.length
     }
 
     loadLocalStorage(){
         const roomData=JSON.parse(localStorage.getItem('roomData')) || [];
+        
         return roomData;
     }
+
 
     renderRooms(){
         this.rooms.forEach((info,index)=>{
@@ -178,19 +221,21 @@ class Table{
             <td>${info.floor}</td>
             <td>${info.type}</td>
             <td><i class="fa-regular fa-circle-check"></i></td>
-            <td>20.08.2023</td>
-            <td>Rufat Rasulov</td>
-            <td>${info.price}AZN</td>
-            <td><i class="fa-regular fa-square-plus button1"></i></td>
-            <td><i class="fa-solid fa-user-minus button2"></i></td>
-            <td><i class="fa-solid fa-trash-can button3"></i></td>
+            <td>---</td>
+            <td>---</td>
+            <td>${info.price}</td>
+            <td><i class="fa-regular fa-square-plus userButton"></i></td>
+            <td><i class="fa-solid fa-user-minus "></i></td>
+            <td><i class="fa-solid fa-trash-can delete-button"></i></td>
         `
         const tr = document.createElement('tr')
         tr.innerHTML = roomElement
         this.tbodyEl.appendChild(tr)
+        
+       
         this.addRoomModal.closeModal()
     });
-
+   
 }
 }
  const table = new Table();

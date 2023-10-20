@@ -9,7 +9,6 @@
     background-color: aqua;
     display: grid;
     grid-template-rows: 1fr 7fr 1.5fr;
-
 }
 .filter{
     // background-color: rgb(34, 33, 33);
@@ -32,15 +31,13 @@
         border-radius: 7px;
         height: 33px;
         width: 80px;
-
     }
-   
-    
 }
-
 
 .info-table{
     background-color: rgb(139, 137, 138);
+    overflow-y: scroll;
+    height: 100%;
     table{
 
         width: 100%;
@@ -54,7 +51,6 @@
                 border: 1px solid black;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 font-weight: 400;
-                
             }
         }
         tbody{
@@ -136,6 +132,7 @@
     box-shadow: 0px 0px 20px 0px rgb(189, 187, 187);
     z-index: 3;
     transition-duration: 0.5s;
+    overflow: hidden;
     .title{
         border-bottom: 1px solid grey;
         padding: 15px;
